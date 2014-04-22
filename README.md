@@ -12,19 +12,17 @@ Create repository in GitHub, pull down
     git clone https://github.com/vgmcglaughlin/heroku-rails.git
     cd heroku-rails/
 
-Create rails app
+Create rails app, add "welcome" controller
+Add app/views/welcome/index.html.erb and update config/routes.rb (not shown, see source)
 
     rails new .
     rails generate controller welcome
-
-Add app/views/welcome/index.html.erb
-Update config/routes.rb (not shown, see source)
 
 Run locally, check at http://localhost:3000
 
     rails server
 
-In Gemfile, replace gem 'sqlite3' with gem 'pg'
+In Gemfile, replace gem 'sqlite3' with gem 'pg' (could have avoiding this by using the `--database=postgresql` option when creating the app), install bundle
 
     bundle install
 
@@ -33,7 +31,7 @@ Log into Heroku, create new app
     heroku login
     heroku create
 
-Check that remote was added
+Check that remote "heroku" was added
 
     git config -e
 
